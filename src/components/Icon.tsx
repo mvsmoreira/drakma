@@ -1,13 +1,13 @@
-import { Flex, Icon as ChakraIcon } from "@chakra-ui/react"
+import { Flex, Icon as ChakraIcon, IconProps as ChakraIconProps } from "@chakra-ui/react"
 import { ElementType } from "react"
 
-interface IconProps {
-    icon: ElementType
+interface IconProps extends ChakraIconProps {
+    iconVariant: ElementType
     hover?: boolean
     size?: number
 }
 
-export const Icon = ({ icon, hover, size }: IconProps) => {
+export const Icon = ({ iconVariant, hover, size, ...rest }: IconProps) => {
     return (
         <Flex
             width={8}
@@ -23,11 +23,10 @@ export const Icon = ({ icon, hover, size }: IconProps) => {
             )}
         >
             <ChakraIcon
-                as={icon}
+                as={iconVariant}
                 width={size ? size : 5}
                 h={size ? size : 5}
-                color="light.textPrimary"
-                weight="bold"
+                {...rest}
             />
         </Flex>
     )

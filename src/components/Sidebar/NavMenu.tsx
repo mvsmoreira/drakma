@@ -28,8 +28,8 @@ export const NavMenu = ({ placeholder, children, icon }: NavMenuProps) => {
                 color="light.textPrimary"
                 fontSize="1rem"
                 fontWeight="500"
-                leftIcon={<Icon icon={icon} />}
-                rightIcon={<Icon icon={CaretRight} />}
+                leftIcon={<Icon iconVariant={icon} />}
+                rightIcon={<Icon iconVariant={CaretRight} />}
             >
                 <Box flex="start">{placeholder}</Box>
             </MenuButton>

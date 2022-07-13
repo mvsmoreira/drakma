@@ -21,6 +21,11 @@ const theme = extendTheme({
       textPrimary: "#CBD5E0",
       textSecondary: "#718096",
     },
+    semantic: {
+      success: "#68D391",
+      error: "#F56565",
+      info: "#9F7AEA",
+    }
   },
   styles: {
     global: {

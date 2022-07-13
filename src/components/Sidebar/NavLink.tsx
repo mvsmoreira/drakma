@@ -23,7 +23,7 @@ export const NavLink = ({ icon, href, children, ...rest }: NavLinkProps) => {
               }}
               {...rest}
             >
-                <Icon icon={icon} />
+                <Icon iconVariant={icon} />
                 <Text
                     color="light.textPrimary"
                     fontSize="1rem"

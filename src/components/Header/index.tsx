@@ -15,6 +15,11 @@ export const Header = () => {
             marginTop="1rem"
             height="4.5rem"
             alignItems="center"
+            position="sticky"
+            top={0}
+            background="light.surfacePrimary"
+            zIndex="2"
+
         >
             <Logo />
             <Search />

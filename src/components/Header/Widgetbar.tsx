@@ -12,8 +12,8 @@ export const WidgetBar = () => {
             paddingX={8}
             height={8}
         >
-            <Icon icon={Notification} hover />
-            <Icon icon={Moon} hover />
+            <Icon iconVariant={Notification} hover />
+            <Icon iconVariant={Moon} hover />
         </HStack>
     )
 }
