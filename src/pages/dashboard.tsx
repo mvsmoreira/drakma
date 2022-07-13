@@ -1,13 +1,14 @@
-import { Button, Flex, SimpleGrid, Text } from "@chakra-ui/react"
+import { Flex, SimpleGrid, Text } from "@chakra-ui/react"
 import { Header } from "../components/Header"
 import { Sidebar } from "../components/Sidebar"
 import { Icon } from "../components/Icon"
-import { CaretLeft, CaretRight, CirclesThreePlus, EyeSlash, MinusCircle, PlusCircle } from "phosphor-react"
+import { CaretLeft, CaretRight, EyeSlash, MinusCircle, PlusCircle } from "phosphor-react"
 import { SummaryCard } from "../components/SummaryCard"
 import { MainCard } from "../components/MainCard"
-import { BalanceChart } from "../components/BalanceChart"
-import { ExpensesByCategoryChart } from "../components/ExpensesByCategoryChart"
-import { AnnualProjectionChart } from "../components/AnnualProjectionChart"
+import { BalanceChart } from "../components/Charts/BalanceChart"
+import { ExpensesByCategoryChart } from "../components/Charts/ExpensesByCategoryChart"
+import { AnnualProjectionChart } from "../components/Charts/AnnualProjectionChart"
+import { NewTransactionButton } from "../components/NewTransactionButton"
 
 const Dashboard = () => {
   return (
@@ -34,32 +35,17 @@ const Dashboard = () => {
               </Text>
               <Icon iconVariant={CaretRight} hover size={6} />
             </Flex>
-            <Button
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              height="3.75rem"
-              paddingX={6}
-              background="brand.main"
-              borderRadius="full"
-              transition="filter 0.2s ease-in-out"
-              _hover={{
-                filter: "brightness(0.9)"
-              }}
-            >
-              <Text>Nova Transação</Text>
-              <Icon iconVariant={CirclesThreePlus} size={8} marginLeft={4} />
-            </Button>
+            <NewTransactionButton />
           </Flex>
           <SimpleGrid minChildWidth="346px" spacing="2rem" marginTop="2rem">
-            <SummaryCard icon={EyeSlash} title="Saldo geral"/>
-            <SummaryCard icon={PlusCircle} title="Receitas"/>
-            <SummaryCard icon={MinusCircle} title="Despesas"/>
+            <SummaryCard icon={EyeSlash} title="Saldo geral" />
+            <SummaryCard icon={PlusCircle} title="Receitas" />
+            <SummaryCard icon={MinusCircle} title="Despesas" />
           </SimpleGrid>
           <SimpleGrid columns={2} spacing="2rem" marginTop="2rem">
-              <MainCard title="Balanço mensal" sideTotals amount={5450.00} chart={<BalanceChart />} />
-              <MainCard title="Gastos por categoria" amount={5450.00} chart={<ExpensesByCategoryChart />} />
-              <MainCard title="Projeção anual" amount={25450} chart={<AnnualProjectionChart />} />
+            <MainCard title="Balanço mensal" sideTotals amount={5450.00} chart={<BalanceChart />} />
+            <MainCard title="Gastos por categoria" amount={5450.00} chart={<ExpensesByCategoryChart />} />
+            <MainCard title="Projeção anual" amount={25450} chart={<AnnualProjectionChart />} />
           </SimpleGrid>
         </Flex>
 

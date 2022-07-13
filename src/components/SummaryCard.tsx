@@ -2,7 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react"
 import { ElementType } from "react"
 import { Icon } from "./Icon"
 import { TrendUp } from "phosphor-react"
-import { SummaryCardChart } from "./SummaryCardChart"
+import { SummaryCardChart } from "./Charts/SummaryCardChart"
 
 
 interface SummaryCardProps {
